@@ -4,6 +4,7 @@ from flask import Flask, request, jsonify, make_response
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 from dotenv import load_dotenv
+from waitress import serve
 
 load_dotenv()
 
@@ -92,3 +93,5 @@ def delete_user(id):
     except Exception as e:
         return make_response(jsonify({'message' : "error deleting the user", 'error' : str(e)}), 500)
 
+if __name__ == "__main__":
+    serve(app, host="0.0.0.0", port=4000)

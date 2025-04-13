@@ -3,4 +3,4 @@ psycopg2-binary
 Flask-SQLAlchemy
 Flask-CORS
 python-dotenv
-# pymongo[srv]
+waitress
